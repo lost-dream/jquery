@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iscroll</title>
+	<script src="iscroll.js"></script>
+	<script src="jquery.js"></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+			list-style: none;
+		}
+		#wrapper{
+			width:500px;
+			height:100px;
+		}
+		#wrapper ul{width:900px;
+			height:100%;
+			display: flex;
+		}
+		#wrapper ul li{
+			flex: 1;
+			width:100px;
+			line-height: 100px;
+			text-align: center;
+			color:#fff;
+			background: #ace
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+		</ul>					
+	</div>
+	<script type="text/javascript">
+		var myScroll = new iScroll('wrapper',{
+			hScroll: true,
+			vScroll:false,
+			bounce: false,
+			useTransform: false
+		})
+		$('#wrapper ul li').each(function(i,v){
+			$(v).on('click',function(){
+				console.log(myScroll.x)
+			})
+		})
+	</script>
+</body>
+</html>
